@@ -327,6 +327,36 @@
 	\circleicon{#1} & {\sidetext{#2}}\\%
 }
 
+% add Opleidingen:
+% \addcursusdatadata{<periode>}{<title>}{<description>}
+\newcommand{\opleidingdata}{}
+\newcommand*{\addopleiding}[4]{%
+	\apptocmd{\opleidingdata}{\cvitem{#1}{#2}{#3}{#4}}{}{}%
+}
+
+% add Cursussen:
+% \addcursusdatadata{<periode>}{<title>}{<description>}
+\newcommand{\cursusdata}{}
+\newcommand*{\addcursusdatadata}[3]{%
+	\apptocmd{\cursusdata}{\cvitem{#1}{#2}{}{#3}}{}{}%
+}
+
+% add nevenactiviteiten:
+\newcommand{\nevenactiviteitendata}{}
+% \addbeginnevenactiviteit{<nevenactiviteit>}
+\newcommand*{\addbeginnevenactiviteit}[1]{%
+	\apptocmd{\nevenactiviteitendata}{\cvsubsection{#1}}{}{}%
+	\apptocmd{\nevenactiviteitendata}{\begin{cvtable}[\cvtablespace]}{}{}%
+}
+% \addnevenactiviteit{<periode>}{<description>}{<rol>}{<locatie>}
+\newcommand*{\addnevenactiviteit}[3]{%
+	\apptocmd{\nevenactiviteitendata}{\cvitem{#1}{#2}{}{#3}}{}{}%
+}
+% \addendnevenactiviteit
+\newcommand*{\addendnevenactiviteit}{%
+	\apptocmd{\nevenactiviteitendata}{\end{cvtable}}{}{}%
+}
+
 % add werkervaring:
 \newcommand{\werkervaringdata}{}
 % \addbeginwerkgever{<werkgever>}
@@ -344,7 +374,7 @@
 	\fi
 }
 % \addendwerkgever
-\newcommand*{\addendwerkgever}[1]{%
+\newcommand*{\addendwerkgever}{%
 	\apptocmd{\werkervaringdata}{\end{cvtable}}{}{}%
 }
 
@@ -646,6 +676,35 @@
 		% user definitions
 		\backsidebar
 	\end{sidebar}
+}
+
+\newcommand{\makeback}{%
+	\cvsection{Opleidingen}
+		\begin{cvtable}[\cvtablespace]
+			\opleidingdata
+		\end{cvtable}
+
+	\cvsection{Cursussen}
+		\begin{cvtable}[\cvtablespace]
+			\cursusdata
+		\end{cvtable}
+
+	\cvsection{Nevenactiviteiten}
+		\nevenactiviteitendata
+
+	\cvsignature
+}
+
+\newcommand{\makecv}{
+	% FRONT
+	\makefrontsidebar
+	\makefront
+
+	\newpage
+
+	% BACK
+	\makebacksidebar
+	\makeback
 }
 
 
