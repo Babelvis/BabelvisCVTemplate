@@ -105,6 +105,9 @@
 	\expandafter\renewcommand{\sidesectionsize}{\csname #1\endcsname}%
 }
 
+% directory settings
+\newcommand*{\subdirectory}{}
+\DeclareOptionX{subdirectory}{\renewcommand{\subdirectory}{#1}}
 
 % logo settings
 \newlength\logowidth%
@@ -548,7 +551,7 @@
 
 		% insert logo
 		\begin{figure}\centering%
-			\includegraphics[align=c, width=\logowidth]{template/pics/logo_babelvis.png}%
+			\includegraphics[align=c, width=\logowidth]{{\subdirectory}pics/logo_babelvis.png}%
 		\end{figure}
 		\vspace*{\logospace}%
 
