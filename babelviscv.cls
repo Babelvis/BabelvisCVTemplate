@@ -548,7 +548,7 @@
 
 		% insert logo
 		\begin{figure}\centering%
-			\includegraphics[align=c, width=\logowidth]{pics/logo_babelvis.png}%
+			\includegraphics[align=c, width=\logowidth]{template/pics/logo_babelvis.png}%
 		\end{figure}
 		\vspace*{\logospace}%
 
