@@ -327,6 +327,34 @@
 	\circleicon{#1} & {\sidetext{#2}}\\%
 }
 
+% add werkervaring:
+\newcommand{\werkervaringdata}{}
+% \addbeginwerkgever{<werkgever>}
+\newcommand*{\addbeginwerkgever}[1]{%
+	\apptocmd{\werkervaringdata}{\cvsubsection{#1}}{}{}%
+	\apptocmd{\werkervaringdata}{\begin{cvtable}[\cvtablespace]}{}{}%
+}
+% \addjobbeschrijving{<periode>}{<description>}{<rol>}{<locatie>}{<key results>}
+\newcommand*{\addjobbeschrijving}[5]{%
+	\apptocmd{\werkervaringdata}{\cvitem{#1}{#2}{#3}{#4}}{}{}%
+	\if\relax\detokenize{#5}\relax%
+		% there is no Key Results
+	\else
+		\apptocmd{\werkervaringdata}{\cvitemlist{Key Results:}{#5}}{}{}%
+	\fi
+}
+% \addendwerkgever
+\newcommand*{\addendwerkgever}[1]{%
+	\apptocmd{\werkervaringdata}{\end{cvtable}}{}{}%
+}
+
+% add Profiel Usage:
+% \addprofieldata{<Text>}
+\newcommand{\profieldata}{}
+\newcommand*{\addprofieldata}[1]{%
+	\apptocmd{\profieldata}{\sidetext{#1}}{}{}%
+}
+
 % add Competenties Usage:
 % \addcompetenciesdata{<Text>}
 \newcommand{\competenciesdata}{}
@@ -596,6 +624,14 @@
 	\end{sidebar}
 }
 
+\newcommand{\makefront}{%
+	\cvsection{Profiel}
+	\profieldata
+
+	\cvsection{Werkervaring}
+	\werkervaringdata
+}
+
 \newcommand{\makebacksidebar}{%
 	\begin{sidebar}
 		% make sure there is no space at top
@@ -654,25 +690,24 @@
 \newcommand{\cvitem}[4]{%
 	\parbox[t]{\datecolwidth}{\raggedright \textbf{#1}} &%
 	\parbox[t]{0.98\textwidth-\datecolwidth}{%
+		
+		\if\relax\detokenize{#3}\relax%
+			\parbox[t]{\linewidth-\widthof{\footnotesize}-1em}{\raggedright \textbf{#2}}%
+		 	% no location
+		\else
+			\parbox[t]{\linewidth-\widthof{\footnotesize #3}-1em}{\raggedright \textbf{#2}}%
+			\hfill {\footnotesize#3}%
+		\fi
 		\if\relax\detokenize{#4}\relax%
-			\if\relax\detokenize\expandafter{#3}\relax
-				\parbox[t]{\linewidth-\widthof{\footnotesize}-1em}{\raggedright \textbf{#2}}%
-			\else
-				\parbox[t]{\linewidth-\widthof{\footnotesize}-1em}{\raggedright \textbf{#2}}%
+		 	% no description
+		\else
+			\if\relax\detokenize{#3}\relax%
 				\newline
-				\textcolor{itemtextcolor}{#4}%\vspace{\parsep}%
-			\fi
-		\else%
-			\if\relax\detokenize\expandafter{#3}\relax
-				\parbox[t]{\linewidth-\widthof{\footnotesize #3}-1em}{\raggedright \textbf{#2}}%
-				\hfill {\footnotesize#3} \\%
-				\textcolor{itemtextcolor}{#4}%\vspace{\parsep}%
 			\else
-				\parbox[t]{\linewidth-\widthof{\footnotesize}-1em}{\raggedright \textbf{#2}}%
-				\newline
-				\textcolor{itemtextcolor}{#4}%\vspace{\parsep}%
+				
 			\fi
-		\fi%
+			\textcolor{itemtextcolor}{#4}%\vspace{\parsep}%
+		\fi
 	}\\
 }
 
