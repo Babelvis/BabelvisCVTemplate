@@ -21,79 +21,8 @@
 %                             ADDITIONAL PACKAGES
 %-------------------------------------------------------------------------------
 \documentclass[
-	a4paper,
-	% 9pt,
-	% sidesectionsize=Large,
-	% showframes,
-	% vline=2.2em,
-	% maincolor=cvgreen,
-	% sidecolor=gray!50,
-	% sidetextcolor=green,
-	% sectioncolor=red,
-	% subsectioncolor=orange,
-	% itemtextcolor=black!80,
-	% sidebarwidth=0.4\paperwidth,
-	% topbottommargin=0.03\paperheight,
-	% leftrightmargin=20pt,
-	% profilepicsize=4.5cm,
-	% profilepicborderwidth=3.5pt,
-	% profilepicstyle=profilecircle,
-	% profilepiczoom=1.0,
-	% profilepicxshift=0mm,
-	% profilepicyshift=0mm,
-	% profilepicrounding=1.0cm,
-	% logowidth=4.5cm,
-	% logospace=5mm,
-	% frontsidebaronallpages, % omit any \makefrontsidebar or \makebacksidebar cmds!
-	% datecolwidth=0.22\textwidth,
+	a4paper
 ]{babelviscv}
-
-% fine tune line spacing
-% \usepackage{setspace}
-% \setstretch{1.1}
-
-% improve word spacing and hyphenation
-\usepackage{microtype}
-\usepackage{ragged2e}
-
-% uncomment in case you don't want any hyphenation
-% \usepackage[none]{hyphenat}
-
-% take care of proper font encoding
-\ifxetexorluatex
-	\usepackage{fontspec}
-	\defaultfontfeatures{Ligatures=TeX}
-	% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
-\else
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
-\fi
-
-% use a sans serif font as default
-\usepackage[sfdefault]{ClearSans}
-% \usepackage[sfdefault]{noto}
-
-% enable mathematical syntax for some symbols like \varnothing
-\usepackage{amssymb}
-
-% bubble diagram configuration
-\usepackage{smartdiagram}
-\smartdiagramset{
-	% default font size is \large, so adjust to harmonize with sidebar layout
-	bubble center node font = \footnotesize,
-	bubble node font = \footnotesize,
-	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
-	bubble center node size = 0.4\sidebartextwidth,
-	bubble node size = 0.25\sidebartextwidth,
-	distance center/other bubbles = 1.5em,
-	% set center bubble color
-	bubble center node color = maincolor!70,
-	% define the list of colors usable in the diagram
-	set color list = {maincolor!10, maincolor!40,
-	maincolor!20, maincolor!60, maincolor!35},
-	% sets the opacity at which the bubbles are shown
-	bubble fill opacity = 0.8,
-}
 
 %-------------------------------------------------------------------------------
 %                            PERSONAL INFORMATION
@@ -122,52 +51,39 @@
 % any other custom entry
 \cvcustomdata{\faFlag}{Chinese}
 
-%-------------------------------------------------------------------------------
-%                              SIDEBAR 1st PAGE
-%-------------------------------------------------------------------------------
-% add more profile sections to sidebar on first page
-\addtofrontsidebar{
-	% include gosquare national flags from https://github.com/gosquared/flags;
-	% naming according to ISO 3166-1 alpha-2 country codes
-	\graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
+%                            SOCIAL NETWORK ACCOUNTS
 
-	\sidesection{Hard Skills}
-		\skill{\faBalanceScale}{Sleeping almost all day}
-		\skill{\faSitemap}{Eating a lot of bamboo sprouts}
-		\skill{\faGraduationCap}{Relaxing rest of the day}
+% see https://www.ipgp.fr/~moguilny/LaTeX/fontawesome5Icons.pdf
+% add social network accounts incl. proper hyperlinks Usage:
+% \addsocialnetworkdata{<Icon>}{<Url>}{<Text>}
+\addsocialnetworkdata{\faLinkedin}{https://www.linkedin.com/}{LinkedIn}
+\addsocialnetworkdata{\faYoutube}{https://www.youtube.com/}{Youtube kanaal}
+\addsocialnetworkdata{\faGithub}{https://github.com/}{Github}
 
-	\sidesection{Soft Skills}
-			\skill[1.8em]{\faCompress}{No need to specify further}
-			\skill[1.8em]{\faCompress}{On a tree}
-			\skill[1.8em]{\faCompress}{In the grass}
-}
+%                            COMPETENTIES
 
+% add Competenties Usage:
+% \addcompetenciesdata{<Text>}
+\addcompetenciesdata{Volhardend}
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR 2nd PAGE
 %-------------------------------------------------------------------------------
 
 \addtobacksidebar{
-	\sidesection{About Me}
-	\aboutme{
-		The giant panda is a terrestrial animal and primarily spends its life
-		roaming and feeding in the bamboo forests of the Qinling Mountains and in
-		the hilly province of Sichuan.
-	}
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/gosquared-flags/flags/flags-iso/shiny/64}}
 
-	\sidesection{Barskills}
-	\barskill[1ex]{\faSkyatlas}{Wearing asian rice hats}{60}
-	\barskill[2ex]{\faImage}{Playing Chess}{30}
-	\barskill[3ex]{\faMusic}{Playing the bamboo flute}{50}
+	\sidesection{Vaardigheden}
+		\babelvisskill{Sleeping almost all day}{5}
+		\babelvisskill{Eating a lot of bamboo sprouts}{3}
+		\babelvisskill{Relaxing rest of the day}{4}
 
-	\sidesection{Memberships}
-	\begin{memberships}
-		\membership[4em]{pics/logo.png}{PandaScience.net}
-		\membership[4em]{pics/logo.png}{Some longer text spanning over more than
-			only one line}
-	\end{memberships}
+	\sidesection{Talen} 
+		\languageskill{\flag{NL.png}}{Nederlands}{Moedertaal}
+		\languageskill{\flag{GB.png}}{Engels}{Goed}
 }
-
 
 %-------------------------------------------------------------------------------
 %                         TABLE ENTRIES RIGHT COLUMN
@@ -177,7 +93,7 @@
 \makefrontsidebar
 
 \cvsection{Working Experience}
-\begin{cvtable}[3]
+\begin{cvtable}[\cvtablespace]
 	\cvitem{currently}{CEO The Panda Way}{Start Up}{Chief executive officer, Head
 		developer and yoga ambassador of 'The Panda Way' - A company from pandas
 		for pandas.}
@@ -191,7 +107,7 @@
 
 \cvsection{Education}
 \cvsubsection{Postgraduate Training}
-\begin{cvtable}[1.5]
+\begin{cvtable}[\cvtablespace]
 	\cvitem{2009 -- 2010}{Post-Doc Panda Studies}{Panda Academy}
 		{In-depth studies on the impact of bamboo nutrition for young pandas and
 		its relation to relaxing, sleeping and snoozing parts of the day.}
@@ -203,28 +119,28 @@
 
 
 \cvsubsection{Study}
-\begin{cvtable}[1.5]
+\begin{cvtable}[\cvtablespace]
 	\cvitem{2006 -- 2008}{Master Studies Panda Science}{Panda Academy}
 		{Focus: Advanced rice hat studies and nouveau rain-reflecting cover
 		materials.}
-	\cvitem{}{Master Thesis ($\varnothing\, 1,0$)}{Asian Rice Hat Institute}
+	\cvitem{}{Master Thesis }{Asian Rice Hat Institute}
 		{Impact of solar radiation onto rice hat cover materials with special
 		attention to water resistance.}
 	\cvitem{2003 -- 2006}{Bachelor Studies PandaScience}{Panda Academy}
 		{Focus: Bamboo morphology and its usage in different craftmanships.}
-	\cvitem{}{Bachelor Thesis ($\varnothing\, 1,0$)}{Bamboo Institute}
+	\cvitem{}{Bachelor Thesis }{Bamboo Institute}
 		{The bambo flute: An underestimated instrument in orchestras?}
 \end{cvtable}
 
 \cvsection{Publications}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvpubitem{Cooking: 100 recipes for lazy Pandas}{Me and My Panda Friends}
 		{Panda's Culinary World}{2010}
 	\cvpubitem{Pandastasia}{Still Me}{Bamboo Books Assoc.}{2005}
 \end{cvtable}
 
 \cvsection{Awards}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitem{2010 -- now}{Panda of the Year}{Panda World Forum}{}
 	\cvitem{2005 -- now}{Face of World Wide Fund for Nature}{WWF}{}
 	\cvitem{2000}{Winner of Bamboo Sprouts Eating Contest}{Bamboo Society}{}
@@ -232,7 +148,7 @@
 
 
 \cvsection{Extra-Curricular Activities}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
 	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda Orchestra}
 	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
@@ -250,13 +166,13 @@
 
 \cvsection{section}
 \cvsubsection{Subsection}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
 \end{cvtable}
 
 \cvsection{cvitem}
 \cvsubsection{Multi-line with longer description}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitem{date}{Description}{location}{Some longer and more detailed
 		description, that takes two lines of space instead of only one.}
 	\cvitem{date}{Description}{location}{Some longer and more detailed
@@ -266,7 +182,7 @@
 \end{cvtable}
 
 \cvsubsection{One-line without description}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitem{Award}{One-line description}{Sponsor}{}
 	\cvitem{Award}{One-line description}{Sponsor}{}
 	\cvitem{Award}{One-line description}{Sponsor}{}
@@ -274,14 +190,14 @@
 
 \cvsection{cvitemshort}
 \cvsubsection{One-line}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitemshort{Key}{Some further description}
 	\cvitemshort{Key}{Some further description}
 	\cvitemshort{Key}{Some further description}
 \end{cvtable}
 
 \cvsubsection{Multi-line with longer description}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvitemshort{Key}{Some further description. Can fill even more than
 		only one single line while still keeping the correct indendation level.}
 	\cvitemshort{Key}{Some further description. Can fill even more than
@@ -291,7 +207,7 @@
 \end{cvtable}
 
 \cvsection{cvpubitem}
-\begin{cvtable}
+\begin{cvtable}[\cvtablespace]
 	\cvpubitem{Publication title}{Authors}{Journal}{Year}
 	\cvpubitem{Publication title}{Authors}{Journal}{Year}
 	\cvpubitem{Publication title that is spanning over multiple lines and still
