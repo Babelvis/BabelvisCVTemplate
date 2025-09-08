@@ -334,9 +334,23 @@
 	\apptocmd{\competenciesdata}{\babelviscompetentie{#1}}{}{}%
 }
 
+% add vaardigheden:
+% \addlanguageskill{<icon>}{<description>}{<skilled>}
+\newcommand{\languageskilldata}{}
+\newcommand*{\addlanguageskilldata}[3]{%
+	\apptocmd{\languageskilldata}{\languageskill{#1}{#2}{#3}}{}{}%
+}
+
+% add vaardigheden:
+% \addvaardighedendata{<Text>}{<points>}
+\newcommand{\vaardighedendata}{}
+\newcommand*{\addvaardighedendata}[2]{%
+	\apptocmd{\vaardighedendata}{\babelvisskill{#1}{#2}}{}{}%
+}
+
 % add social network accounts incl. proper hyperlinks Usage:
 % \addsocialnetworkdata{<Icon>}{<Url>}{<Text>}
-% icon can be taken from FontAwesome or Academicon for example
+% icon can be taken from FontAwesome or Academicon
 \newcommand{\socialnetworkdata}{}
 \newcommand*{\addsocialnetworkdata}[3]{%
 	\apptocmd{\socialnetworkdata}{\socialbabelvis{#1}{#2}{#3}}{}{}%
@@ -583,8 +597,16 @@
 
 \newcommand{\makebacksidebar}{%
 	\begin{sidebar}
-		% make sure there is no space at top, but after cvjob
+		% add flags images location
+		\graphicspath{{\subdirectory}{pics/gosquared-flags/flags/flags-iso/shiny/64}}
+		% make sure there is no space at top
 		\setlength{\parskip}{1ex}
+		
+		\sidesection{Vaardigheden}
+		\vaardighedendata
+
+		\sidesection{Talen}
+		\languageskilldata
 
 		% user definitions
 		\backsidebar
