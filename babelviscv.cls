@@ -335,10 +335,10 @@
 }
 
 % add vaardigheden:
-% \addlanguageskill{<icon>}{<description>}{<skilled>}
+% \addlanguageskill{<country code>}{<description>}{<skilled>}
 \newcommand{\languageskilldata}{}
 \newcommand*{\addlanguageskilldata}[3]{%
-	\apptocmd{\languageskilldata}{\languageskill{#1}{#2}{#3}}{}{}%
+	\apptocmd{\languageskilldata}{\languageskill{\flag{#1.png}}{#2}{#3}}{}{}%
 }
 
 % add vaardigheden:
