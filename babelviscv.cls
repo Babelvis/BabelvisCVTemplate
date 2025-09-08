@@ -444,7 +444,8 @@
 
 % uniform icon style for all skill icons, e.g. flags or fontawesome icons
 \newcommand{\cvicon}[1]{\makebox[1em]{\color{iconcolor} #1}}
-\newcommand{\flag}[1]{\includegraphics[align=c, width=1em]{#1}}
+\newcommand{\pathflags}{pics/gosquared-flags/flags/flags-iso/shiny/64/}
+\newcommand{\flag}[1]{\includegraphics[align=c, width=1em]{\subdirectory\pathflags#1}}
 
 % \babelvisskill[<indent>][<maxpoints>]{<description>}{<points>} creates
 % | [indent]  description  \hfill  ● ● ● ○ ○ |
@@ -597,8 +598,6 @@
 
 \newcommand{\makebacksidebar}{%
 	\begin{sidebar}
-		% add flags images location
-		\graphicspath{{\subdirectory}{pics/gosquared-flags/flags/flags-iso/shiny/64}}
 		% make sure there is no space at top
 		\setlength{\parskip}{1ex}
 		
