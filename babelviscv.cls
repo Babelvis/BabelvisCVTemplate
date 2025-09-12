@@ -341,9 +341,15 @@
 \newcommand{\littleprofile}[1]{
 
 	\begin{tikzpicture}[x=50pt, y=50pt]
+		\begin{scope}
 		\clip (0, 0) circle (0.5);
-		\node[inner sep=0pt] (russell) at (0,0)
-		{\includegraphics[width=50pt]{#1}};
+			\node[inner sep=0pt] (russell) at (0,0)
+				{\includegraphics[width=50pt]{#1}};
+		\end{scope}
+		\begin{scope}
+			\draw[line width=2pt, color=iconcolor]
+				(0, 0) circle (0.5);
+		\end{scope}
 	\end{tikzpicture}
 	\centering
 
