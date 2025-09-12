@@ -723,7 +723,7 @@
 
 	\iftoggle{showwatandereovermijzeggen}{	
 		\cvsection{Wat andere over mij zeggen}
-			\begin{cvtable}[\cvtablespace]
+			\begin{cvtable}[2]
 				\watandereovermijzeggendata
 			\end{cvtable}
 	}
