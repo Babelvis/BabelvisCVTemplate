@@ -334,6 +334,38 @@
 	\apptocmd{\opleidingdata}{\cvitem{#1}{#2}{#3}{#4}}{}{}%
 }
 
+% add Wat andere over mij zeggen:
+% \addwatandereovermijzeggendata{<profile>}{<name>}{<title>}{<description>}{<location>}
+\newtoggle{showwatandereovermijzeggen}
+\togglefalse{showwatandereovermijzeggen}
+\newcommand{\littleprofile}[1]{
+
+	\begin{tikzpicture}[x=50pt, y=50pt]
+		\begin{scope}
+		\clip (0, 0) circle (0.5);
+			\node[inner sep=0pt] (russell) at (0,0)
+				{\includegraphics[width=50pt]{#1}};
+		\end{scope}
+		\begin{scope}
+			\draw[line width=2pt, color=iconcolor]
+				(0, 0) circle (0.5);
+		\end{scope}
+	\end{tikzpicture}
+	\centering
+
+}
+\newcommand{\watandereovermijzeggendata}{}
+\newcommand*{\addwatandereovermijzeggendata}[5]{%
+	\toggletrue{showwatandereovermijzeggen}
+	\apptocmd{\watandereovermijzeggendata}{\cvitem
+				{\littleprofile{#1}}
+				{#2}
+				{#5}
+				{{{\scriptsize #3\newline}#4}}
+				}
+				{}{}%
+}
+
 % add Cursussen:
 % \addcursusdatadata{<periode>}{<title>}{<description>}
 \newcommand{\cursusdata}{}
@@ -617,6 +649,9 @@
 \newcommand{\addtofrontsidebar}[1]{\apptocmd{\frontsidebar}{#1}{}{}}
 \newcommand{\addtobacksidebar}[1]{\apptocmd{\backsidebar}{#1}{}{}}
 
+\newcommand{\backsite}{}
+\newcommand{\addtobackside}[1]{\apptocmd{\backsite}{#1}{}{}}
+
 \newcommand{\makefrontsidebar}{%
 	\begin{sidebar}
 		% most sidebar commands end with \par; increase space between them
@@ -691,6 +726,16 @@
 
 	\cvsection{Nevenactiviteiten}
 		\nevenactiviteitendata
+
+	\iftoggle{showwatandereovermijzeggen}{	
+		\cvsection{Wat andere over mij zeggen}
+			\begin{cvtable}[2]
+				\watandereovermijzeggendata
+			\end{cvtable}
+	}
+	
+	% user definitions
+	\backsite
 
 	\cvsignature
 }
