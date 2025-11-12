@@ -740,6 +740,9 @@
 	\cvsignature
 }
 
+\newcommand*{\Space}[1]{\renewcommand{\Space}{#1}}
+\Space{ }
+
 \newcommand{\makecv}{
 	% FRONT
 	\makefrontsidebar
