@@ -7,14 +7,12 @@
 %                           CLASS NAME AND VERSION
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\LoadClass{template/babelviscv}
-\ProvidesClass{visitekaartje}[2025/08/25 CV class]
+\LoadClass{template/babelvis}
+\ProvidesClass{visitekaartje}[2025/11/12 Babelvis visitekaartje class]
 
 % Passes and class options to the underlying article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions
-
-% \usepackage[showframe]{geometry}
 
 % NOTE: ordering in sidebar will mimic the following order
 \cvnameprofile{\Firstname \Space \Lastname}
@@ -51,21 +49,9 @@
     \RequirePackage{qrcode}
     \RequirePackage{rotating}
     \RequirePackage{nunito}
-    \usepackage{xcolor}
-    \usepackage{qrcode}
-    \usepackage{rotating}
-    \usepackage{nunito}
-
-    \setstocksize{55mm}{85mm} % UK Stock size
-    \setpagecc{55mm}{85mm}{*}
-    \settypeblocksize{45mm}{75mm}{*}
-    \setulmargins{5mm}{*}{*}
-    \setlrmargins{5mm}{*}{*}
-
-    \setheadfoot{0.1pt}{0.1pt}
-    \setheaderspaces{1pt}{*}{*}
-
-    \checkandfixthelayout[fixed]
+    \RequirePackage[
+        paperheight=55mm,paperwidth=85mm, margin=5mm
+    ]{geometry}
 
     \pagestyle{empty}
 }
@@ -108,22 +94,18 @@
     \end{minipage}
 
     \newpage
-        
+    \color{maincolor}
     \begin{minipage}[b]{75mm}
-        \color{maincolor}
         \vspace{10mm}
-        \hspace{-6mm}
         \includegraphics[width=75mm]{template/pics/logo_babelvis.png}%
     \end{minipage}
+    \rule{74mm}{0mm}
     \begin{minipage}[t]{75mm}
-        \vspace{-3mm}%
-        \color{maincolor}
         \hspace{15mm}
         \textbf{\fontsize{3.50mm}{8.55mm}\selectfont IT die jouw groei versnelt}
     \end{minipage}
+    \rule{74mm}{0mm}
     \begin{minipage}[t]{75mm}
-        \vspace{-3mm}%
-        \color{maincolor}
         \hspace{17mm}
         \textit{\fontsize{2.50mm}{1.55mm}\selectfont Veilig, betrouwbaar en Europees}    
     \end{minipage}
