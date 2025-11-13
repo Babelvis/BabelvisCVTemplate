@@ -52,14 +52,6 @@
 \colorlet{sectioncolor}{cvsectioncolor}
 \colorlet{subsectioncolor}{cvsubsectioncolor}
 \colorlet{itemtextcolor}{black!90}
-% colors for document body (right column)
-% let user define main color
-\DeclareOptionX{maincolor}{\colorlet{maincolor}{#1}}
-\DeclareOptionX{sidecolor}{\colorlet{sidecolor}{#1}}
-\DeclareOptionX{sidetextcolor}{\colorlet{sidetextcolor}{#1}}
-\DeclareOptionX{sectioncolor}{\colorlet{sectioncolor}{#1}}
-\DeclareOptionX{subsectioncolor}{\colorlet{subsectioncolor}{#1}}
-\DeclareOptionX{itemtextcolor}{\colorlet{itemtextcolor}{#1}}
 
 % set page margins
 \newlength\sidebarwidth%

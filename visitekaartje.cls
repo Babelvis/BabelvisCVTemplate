@@ -11,7 +11,8 @@
 \ProvidesClass{visitekaartje}[2025/11/12 Babelvis visitekaartje class]
 
 % pdf moet voor drukwerkdeals in PDF/x-4:2008 formaat zijn
-\pdfminorversion=6
+% \pdfminorversion=6
+% \pdfcompresslevel=0
 
 % Passes and class options to the underlying article class
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
@@ -28,10 +29,21 @@
 % short address/location, use \newline if more than 1 line is required
 \cvaddress{\Address}
 
+% pdf moet voor drukwerkdeals in PDF/x-4:2008 formaat zijn
+% {HTML}{08398B} -> {cmyk}{0.9424,0.5899,0,0.4549}
+% \definecolor{printcvblue}{cmyk}{0.9424,0.5899,0,0.4549}
+% \definecolor{printcvsidecolor}{cmyk}{0,0,0,0.09}
+% \definecolor{printblack}{cmyk}{0,0,0,0.09}
+% \colorlet{maincolor}{printcvblue}
+% \colorlet{sidecolor}{printcvsidecolor}
+% \colorlet{sidetextcolor}{black}
+% \colorlet{sectioncolor}{printcvblue}
+% \colorlet{subsectioncolor}{printcvblue}
+% \colorlet{itemtextcolor}{black!90}
+
 % het kaartje is 85x55, maar je moet ze bij drukwerk aanleveren met 61x91
 % minimum width=18mm,
 % minimum height=85mm,
-
 
 \newcommand{\drawLogoBG}{%
 	\AddToShipoutPictureBG*{%
@@ -52,11 +64,6 @@
 \newlength\sidebartextwidth
 \setlength{\sidebartextwidth}{42mm}
 
-% pdf moet voor drukwerkdeals in PDF/x-4:2008 formaat zijn
-% {HTML}{08398B} -> {cmyk}{0.9424,0.5899,0,0.4549}
-\definecolor{printcvblue}{cmyk}{0.9424,0.5899,0,0.4549}
-\colorlet{maincolor}{printcvblue}
-
 % het kaartje is 85x55, maar je moet ze bij drukwerk aanleveren met 61x91
 % paperheight=55mm,paperwidth=85mm, margin=5mm
 
@@ -69,7 +76,10 @@
         paperheight=61mm,paperwidth=91mm, margin=8mm
     ]{geometry}
     % pdf moet voor drukwerkdeals in PDF/x-4:2008 formaat zijn
-    \RequirePackage[x-408]{pdfx}
+    % we gebruiken wel RBG en niet CMYK, dus geeft nog "errors"
+    % \RequirePackage[x-408]{pdfx}
+    \RequirePackage[hidelinks]{hyperref}
+    
 
     \pagestyle{empty}
 }
