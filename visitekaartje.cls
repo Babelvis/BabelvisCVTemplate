@@ -32,7 +32,7 @@
 				rectangle,
 				fill=sidecolor,
 				anchor=north west,
-				minimum width=20mm,
+                minimum width=18mm,
 				minimum height=85mm,
 			]{};%
 		\end{tikzpicture}%
@@ -71,11 +71,11 @@
         \rotatebox{90}{%
 			\includegraphics[width=43mm]{template/pics/logo_babelvis.png}%
         }
-        \rotatebox{90}{
-            % \begin{center}
-                \textbf{\fontsize{3.50mm}{3.55mm}\selectfont IT die jouw groei versnelt}
-            % \end{center}
-        }
+        % \rotatebox{90}{
+        %     % \begin{center}
+        %         \textbf{\fontsize{3.50mm}{3.55mm}\selectfont IT die jouw groei versnelt}
+        %     % \end{center}
+        % }
     \end{minipage}
     \begin{minipage}[t]{42mm}
         \vspace{-0mm}%
