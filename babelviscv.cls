@@ -12,7 +12,11 @@
 
 
 \newcommand{\precv}{
+    % enable links
+    \RequirePackage[hidelinks]{hyperref}
     \RequirePackage[a4paper]{geometry}
+
+
 
     % reset the value for alignment
     \setlength{\sidebarwidth}{0.34\paperwidth}

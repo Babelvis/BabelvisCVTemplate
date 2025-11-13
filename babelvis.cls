@@ -192,10 +192,6 @@
 % enable multiple optional arguments in macros
 \RequirePackage{xparse}
 
-% enable links
-\RequirePackage[hidelinks]{hyperref}
-
-
 %-------------------------------------------------------------------------------
 %                          DERIVED COLOR DEFINITIONS
 %-------------------------------------------------------------------------------
