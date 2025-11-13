@@ -60,34 +60,23 @@
 \newcommand{\makevisitekaartje}{
 
     \drawLogoBG
-    \noindent
-    % \textbf{\Name}\\
-    % \tiny subtitle \hfill {\color{gray}Division / Employer}\\ 
-    % \rule{74mm}{0mm}\\
     \begin{minipage}[t]{15mm}
-
-        \vspace{-3mm}%
+        \vspace{-3.5mm}%
         \color{maincolor}
         \rotatebox{90}{%
-			\includegraphics[width=43mm]{template/pics/logo_babelvis.png}%
+			    \includegraphics[width=45mm]{template/pics/logo_babelvis.png}%
         }
-        % \rotatebox{90}{
-        %     % \begin{center}
-        %         \textbf{\fontsize{3.50mm}{3.55mm}\selectfont IT die jouw groei versnelt}
-        %     % \end{center}
-        % }
     \end{minipage}
     \begin{minipage}[t]{42mm}
-        \vspace{-0mm}%
+        \vspace{-2mm}%
         \footnotesize
         \begin{flushleft}
-            \begin{icontable}[2]{1.7em}{0.4em}
+            \small
+            \begin{icontable}[2]{1.7em}{0.6em}
                 \personaldata
             \end{icontable}
         \end{flushleft}
     \end{minipage}
-    % \rule{74mm}{0mm}\\
-    % \hspace{1mm}
     \begin{minipage}[t]{15mm}
         \vspace{25mm}%
         \qrcode[height=15mm]{MECARD:N:\Lastname,\Firstname;URL:\Web;EMAIL:\Email;TEL:\Mobile;}
@@ -95,18 +84,18 @@
 
     \newpage
     \color{maincolor}
-    \begin{minipage}[b]{75mm}
-        \vspace{10mm}
-        \includegraphics[width=75mm]{template/pics/logo_babelvis.png}%
-    \end{minipage}
-    \rule{74mm}{0mm}
     \begin{minipage}[t]{75mm}
-        \hspace{15mm}
-        \textbf{\fontsize{3.50mm}{8.55mm}\selectfont IT die jouw groei versnelt}
-    \end{minipage}
-    \rule{74mm}{0mm}
-    \begin{minipage}[t]{75mm}
-        \hspace{17mm}
-        \textit{\fontsize{2.50mm}{1.55mm}\selectfont Veilig, betrouwbaar en Europees}    
+        \begin{center}
+            \vspace{7mm}
+            \includegraphics[width=75mm]{template/pics/logo_babelvis.png}
+        \end{center}
+        \begin{center}
+            \vspace{-4.5mm}
+            \textbf{\fontsize{3.50mm}{1.55mm}\selectfont IT die jouw groei versnelt}
+        \end{center}
+        \begin{center}
+            \vspace{-4.5mm}
+            \textit{\fontsize{2.50mm}{1.55mm}\selectfont Veilig, betrouwbaar en Europees}
+        \end{center}
     \end{minipage}
 }
