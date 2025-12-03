@@ -128,14 +128,21 @@
 	\begin{sidebar}
 		% most sidebar commands end with \par; increase space between them
 		\setlength{\parskip}{1ex}
-        \begin{minipage}[t]{15mm}
+        \begin{minipage}[]{297mm}
             \color{maincolor}
-            
             \rotatebox{90}{%
-                \textbf{\fontsize{10mm}{1.55mm}\selectfont {#1}}
-                \hspace{80mm}
                 \includegraphics[width=45mm]{template/pics/logo_babelvis.png}%
             }
+            \par
+            \vspace{80mm}
+            \begin{tabular}{@{}l@{}}
+                \rotatebox{90}{%
+                    
+                    \textbf{\fontsize{10mm}{1.55mm}\selectfont {#1}}
+                    
+                }
+            \end{tabular}
+            \vspace{80mm}
         \end{minipage}
 	\end{sidebar}
 }
