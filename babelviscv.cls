@@ -10,6 +10,11 @@
 \LoadClass[subdirectory=template/]{template/babelvis}
 \ProvidesClass{babelviscv}[2025/11/12 Babelvis babelviscv class]
 
+% remove headers and footers
+\pagestyle{empty}
+
+% globally disable paragraph indentation
+\setlength{\parindent}{0pt}
 
 \newcommand{\precv}{
     % enable links

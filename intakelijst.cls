@@ -10,6 +10,10 @@
 \LoadClass{template/babelvis}
 \ProvidesClass{intakelijst}[2025/11/12 Babelvis intakelijst class]
 
+% globally disable paragraph indentation
+\setlength{\parindent}{0pt}
+
+
 \newcommand{\preintake}{
     % enable links
     \RequirePackage[hidelinks]{hyperref}
@@ -27,6 +31,8 @@
     \setlength{\intakeitemcolwidth}{0.3\textwidth}
 
     \geometry{
+          includeheadfoot,
+  headheight=8pt,
         top=\topbottommargin,
         bottom=\topbottommargin,
         left=\sidebarwidth + \leftrightmargin,

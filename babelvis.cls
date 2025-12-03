@@ -202,12 +202,6 @@
 %-------------------------------------------------------------------------------
 %                      GLOBAL LAYOUT AND HEADINGS STYLE
 %-------------------------------------------------------------------------------
-% remove headers and footers
-\pagestyle{empty}
-
-% globally disable paragraph indentation
-\setlength{\parindent}{0pt}
-
 % set space between paragraphs
 % \setlength{\parskip}{1ex}
 

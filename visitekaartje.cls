@@ -10,6 +10,12 @@
 \LoadClass{template/babelvis}
 \ProvidesClass{visitekaartje}[2025/11/12 Babelvis visitekaartje class]
 
+% remove headers and footers
+\pagestyle{empty}
+
+% globally disable paragraph indentation
+\setlength{\parindent}{0pt}
+
 % pdf moet voor drukwerkdeals in PDF/x-4:2008 formaat zijn
 % \pdfminorversion=6
 % \pdfcompresslevel=0
