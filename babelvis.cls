@@ -238,21 +238,20 @@
 %-------------------------------------------------------------------------------
 
 % improve word spacing and hyphenation
-\usepackage{microtype}
-\usepackage{ragged2e}
+\RequirePackage{microtype}
+\RequirePackage{ragged2e}
 
 % take care of proper font encoding
 \ifxetexorluatex
-	\usepackage{fontspec}
+	\RequirePackage{fontspec}
 	\defaultfontfeatures{Ligatures=TeX}
-	% \newfontfamily\headingfont[Path=fonts/]{segoeuib.ttf} % use local font
 \else
-	\usepackage[utf8]{inputenc}
-	\usepackage[T1]{fontenc}
+	\RequirePackage[utf8]{inputenc}
+	\RequirePackage[T1]{fontenc}
 \fi
 
 % use carlito font as default
-\usepackage[sfdefault]{carlito}
+\RequirePackage[sfdefault]{carlito}
 
 \newcommand{\cvtablespace}{1.0}
 
