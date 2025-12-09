@@ -120,19 +120,8 @@
     \end{minipage}
 
     \newpage
-    \color{maincolor}
     \begin{minipage}[t]{75mm}
-        \begin{center}
-            \vspace{7mm}
-            \includegraphics[width=75mm]{template/pics/logo_babelvis.png}
-        \end{center}
-        \begin{center}
-            \vspace{-4.5mm}
-            \textbf{\fontsize{3.50mm}{1.55mm}\selectfont IT die jouw groei versnelt}
-        \end{center}
-        \begin{center}
-            \vspace{-4.5mm}
-            \textit{\fontsize{2.50mm}{1.55mm}\selectfont Veilig, betrouwbaar en Europees}
-        \end{center}
+        \vspace{7mm}
+        \logowithtext{1}
     \end{minipage}
 }

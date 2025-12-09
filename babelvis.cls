@@ -37,6 +37,8 @@
 \RequirePackage{ifthen}
 % enable simple math like +/- etc. on lengths
 \RequirePackage{calc}
+% use of 
+\RequirePackage{setspace}
 
 % pre-define some colors the user can choose from
 \definecolor{cvblue}{HTML}{08398B}
@@ -709,4 +711,29 @@
 	}\\
 }
 
+% publication item
+% \logowithtext{<scaling>} will produce
+% logo with texts, default use \logowithtext{1}
+\newcommand{\logowithtext}[1]{
+	\let\sidelogowidth\relax
+	\newlength\sidelogowidth
+	\setlength{\sidelogowidth}{75mm}
+
+	\let\sidetextone\relax
+	\newlength\sidetextone
+	\setlength{\sidetextone}{3.5mm}
+
+	\let\sidetexttwo\relax
+	\newlength\sidetexttwo
+	\setlength{\sidetexttwo}{2.5mm}
+
+	\color{maincolor}
+	\begin{center}
+		\includegraphics[width=#1\sidelogowidth]{template/pics/logo_babelvis.png}
+		\par
+		\setstretch{0.7}\textbf{\fontsize{#1\sidetextone}{0mm}\selectfont IT die jouw groei versnelt}
+		\par
+		\setstretch{0.7}\textit{\fontsize{#1\sidetexttwo}{0mm}\selectfont Veilig, betrouwbaar en Europees}
+	\end{center}
+}
 % EOF - babelviscv.cls
