@@ -43,7 +43,7 @@
 \newcommand{\intaketablespace}{3.0}
 
 \newcommand{\intakeitem}[4]{%
-	\parbox[t]{\intakeitemcolwidth}{\raggedright \textbf{#1}} &%
+	\parbox[t]{\intakeitemcolwidth}{\raggedright \textbf{#1}} %
 	\parbox[t]{0.98\textwidth-\intakeitemcolwidth}{%
 		
 		\if\relax\detokenize{#4}\relax%
@@ -65,7 +65,7 @@
 
 
 \newcommand{\intakeitemdots}[3]{%
-	\parbox[t]{\intakeitemcolwidth}{\raggedright \textbf{#1}} &%
+	\parbox[t]{\intakeitemcolwidth}{\raggedright \textbf{#1}} %
 	\parbox[t]{0.98\textwidth-\intakeitemcolwidth}{%
     \if\relax\detokenize{#2}\relax%
         % no description	    
